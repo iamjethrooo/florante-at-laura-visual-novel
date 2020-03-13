@@ -11,14 +11,18 @@
 ## title, and shows up in the interface and error reports.
 ##
 ## The _() surrounding the string marks it as eligible for translation.
+init python:
+    # config.debug_sound = False
+    falfont = "fonts/falfont.ttf"
+    config.thumbnail_height = 180 
+    config.thumbnail_width = 250
 
 define config.name = _("Florante at Laura")
-
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## The version of the game.
@@ -29,7 +33,12 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
+define gui.about = _p("""TODO: 
+    Fix scaling of Florante's image
+    Art screen
+    Characters screen
+    Settings screen
+    Change icon
 """)
 
 
@@ -37,7 +46,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "FloranteatLaura"
+define build.name = "FloranteAtLaura"
 
 
 ## Sounds and music ############################################################
@@ -61,7 +70,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+## define config.main_menu_music = "audio/happy.mp3"
 
 
 ## Transitions #################################################################
@@ -119,7 +128,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Controls the default text speed. The default, 0, is infinite, while any other
 ## number is the number of characters per second to type out.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 75
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0

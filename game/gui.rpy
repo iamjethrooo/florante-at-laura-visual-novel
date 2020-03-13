@@ -11,7 +11,8 @@ init offset = -2
 init python:
     gui.init(1280, 720)
 
-
+## Change title text font
+define gui.title_text_font = "fonts/falfont.ttf"
 
 ################################################################################
 ## GUI Configuration Variables
@@ -85,7 +86,7 @@ define gui.title_text_size = 50
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/main_menu.png"
+define gui.main_menu_background = "images/forest.jpg"
 define gui.game_menu_background = "gui/game_menu.png"
 
 
@@ -469,6 +470,3 @@ init python:
 
         gui.nvl_button_width = 1240
         gui.nvl_button_xpos = 20
-
-
-
