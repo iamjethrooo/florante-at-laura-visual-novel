@@ -84,7 +84,7 @@ label ch02:
 
     t "Kanyang mga mata ay lumuluha."
 
-    show florante at right
+    show florante at left
     florante "O! Langit nasaan ang iyong bangis? Ang bandila ng kasamaan ay nagwawagayway sa kahariang Albanya."
 
     florante "Ikaw ang dahilan sa lahat! Sa korona ni Haring Linceo at ang kayamanan ng aking amang Duke."
@@ -110,7 +110,7 @@ label ch03:
 
     scene bg 2 with fade
 
-    show florante at right
+    show florante at left
     florante "Aking sinta… Laura, maalala mo ang pagmamahal mo sa akin… Laura ikaw ang sanhi ng aking ligayang matamis…"
 
     florante "Laura… sa aking panaginip, ang pag-ibig natin ay mahahanap ang isa’t isa. Masakit isipin ang makita kang umiiyak."
@@ -134,7 +134,7 @@ label ch04:
     scene bg 2 with fade
     t "Ang kanyang pag-iisip ay nagugulo sa pagitan ng kamalayan at pagkahimatay."
 
-    show florante at right
+    show florante at left
     florante "Laura! Hindi ba sinabi mo na hindi mo ako itataksil?"
 
     florante "Pinaniwalaan kita, nabulag ba ako sa iyong kagandahan?"
@@ -185,7 +185,7 @@ label ch05:
     hide text with dissolve
 
     scene bg 2 with fade
-    show florante at right
+    show florante at left
     florante "Halina, Laura..."
 
     florante "Laura, walang iba ang lunas sa sakit na aking nararamdaman…"
@@ -220,7 +220,7 @@ label ch06:
 
     t "Maya-maya siya’y umupo sa ilalim ng puno"
 
-    show aladin at right
+    show aladin at left
     aladin "O palad!"
 
     aladin "Aking Flerida... Tuwa ko'y wakas na..."
@@ -228,7 +228,7 @@ label ch06:
 
     t "Sa sobrang galit, siya'y tumayo."
 
-    show aladin at right
+    show aladin at left
     aladin "Taksil! Ama ko’y nagtaksil saakin! Inagaw ang aking sinta, Flerida!"
     
     menu:
@@ -252,7 +252,7 @@ label ch07:
     hide text with dissolve
 
     scene bg 2 with fade
-    show florante at right
+    show florante at left
     florante "Ama, iyong ulo ay itinapat sa kalis… Ang palambit mo’t dalangin sa langit na ako’y maligtas..."
 
     florante "Pananalangin mo’y di nagaganap noong nahulog ang kalis sa iyong leeg, sa bibig mong huling pangungusap."
@@ -277,11 +277,11 @@ label ch08:
     
     scene cabin with fade
     t "Sa puso ng taga-Persya ay naaawa sa mga naririnig."
-    show aladin at right
+    show aladin at left
     aladin "Ang aking ama na inagaw ang kasintahan sa akin, ay walang pagmamahal para sa akin. Ina na 'di ko nakilala, ay maagang namatay."
     hide aladin
 
-    show florante at right
+    show florante at left
     florante "Laura! Paalam. Kahit tinaksil at kinalimutan. Ipapakasal sa iba. Aking habang-buhay na kaligayahan ay nasa sa iyo. Aking puso’y minamahal parin ikaw!"
     hide florante
     $ persistent.ch08 = True
