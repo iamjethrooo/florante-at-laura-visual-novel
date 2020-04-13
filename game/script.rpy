@@ -44,6 +44,12 @@ label start:
 
     call ch10
 
+    call ch11
+
+    call ch12
+
+    call ch13
+
     return
 
 label ch01:
@@ -328,5 +334,70 @@ label ch10:
 
     t "Ang araw ay sumisinag sa mga mata ng Moro."
     $ persistent.ch10 = True
+
+    return
+
+label ch11:
+
+    scene black with dissolve
+    show text "{size=50}Kabanata 12{/size}" at truecenter with fade
+    $ renpy.pause(4)
+    show text "{size=25}Mabuting Kaibigan{/size}" at truecenter with fade
+    $ renpy.pause(4)    
+    hide text with dissolve
+
+    t "Gamit ang sibat, sinaksak at hiniwa ang mga leon."
+
+    t "Ang dalawang leon ay bumagsak."
+
+    t "Pinutol ng Moro ang tali sa kamay, paa at leeg ni Florante."
+
+    t "Bumagsak ang binata sa kanyang mga kamay."
+
+    florante "Laura… Halina, mahal ko…"
+
+    return
+
+label ch12:
+
+    scene black with dissolve
+    show text "{size=50}Kabanata 12{/size}" at truecenter with fade
+    $ renpy.pause(4)
+    show text "{size=25}Batas ng Lahat ng Relihiyon{/size}" at truecenter with fade
+    $ renpy.pause(4)    
+    hide text with dissolve
+
+    t "Nagisin ang binata sa kamay ng isang Moro."
+
+    aladin "Ngayon ligtas ka na sa sakit."
+
+    t "Nagulat si Florante at gumapang palayo kay Aladin."
+
+    aladin "Huwag kang matakot."
+
+    aladin "Kung nasusuklam ka sa aking kandungan, nahuhusgahan akong 'di ka sasaklolohan."
+
+    florante "Isa kang Moro… Na taga-Persya…"
+
+    aladin "At ikaw ay isang taga Albanya…"
+
+    aladin "Isa kang kaaway ng bayan at kapangkat ko ngunit mukhang ang ating pagkakaibigan ay itinadhana."
+
+    aladin "Ako’y isang Moro ngunit nasasaklaw rin ng utos ng Langit, Narinig ko ang iyong iyak, ano pang magagawa ko?"
+
+    florante "Hindi mo nalang sana ako iniligtas… Hindi ko kaya ikarga ang lubhang sakit sa aking puso. Kapag ako’y namatay, nakamit ko na ang kapayapaan."
+
+    return
+
+label ch13:
+
+    scene black with dissolve
+    show text "{size=50}Kabanata 13{/size}" at truecenter with fade
+    $ renpy.pause(4)
+    show text "{size=25}Ang Magkaibigan{/size}" at truecenter with fade
+    $ renpy.pause(4)    
+    hide text with dissolve
+
+    t "Napaluha ang Moro, habang ang dalawa ay sinisinagan ng araw."
 
     return
