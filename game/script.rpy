@@ -13,13 +13,6 @@ label splashscreen:
 
     return
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define t = Character("Tagapagsalaysay")
-define florante = Character("Florante", color="#FED39F")
-define aladin = Character("Aladin")
-
 # The game starts here.
 
 label start:
