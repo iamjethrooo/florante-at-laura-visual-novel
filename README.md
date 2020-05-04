@@ -1,17 +1,21 @@
-# florante-at-laura-visual-novel
+# Florante at Laura
 
-An Android Visual Novel made using [Ren'Py](https://www.renpy.org/). It aims to gamify the learning experience of Florante at Laura to make it easier for students (Grade 8 specifically) to understand the Philippine Epic.
-## Download
+Florante at Laura is a visual novel that aims to gamify the learning experience of Florante at Laura to make it easier for students (Grade 8 specifically) to understand the Philippine Epic.
+## Built With
 
-[v0.5-alpha](https://github.com/iamjethrooo/florante-at-laura-visual-novel/releases/download/v0.5-alpha/FaL-v0.5-alpha.apk)
+* [Ren'Py](https://www.renpy.org/) - The Engine
+* [Sublime Text 3](https://www.sublimetext.com/3) - Text Editor
+
+## Releases [![GitHub issues](https://img.shields.io/github/release/iamjethrooo/florante-at-laura-visual-novel)](https://github.com/iamjethrooo/florante-at-laura-visual-novel/releases) <br>
+v0.5-alpha <br>
 - Working prototype up to chapter 10
 - Added chapter selection screen
 - Disabled settings screen (for now)
 - Added backgrounds and character pictures (Florante and Aladin)
 
-[v0.1-alpha](https://github.com/iamjethrooo/florante-at-laura-visual-novel/releases/download/v0.1-alpha/FaL-v0.1-alpha.apk)
+v0.1-alpha <br>
 - First build
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
