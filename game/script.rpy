@@ -1,10 +1,33 @@
 # Splashscreen
+transform transform_logo:
+    on show:
+        alpha 0 xalign 0.5 yalign 0.5
+        linear 2.0 alpha 1
+    on hide:
+        linear 2.0 alpha 0
 
+transform transform_white:
+    on show:
+        alpha 0 
+        linear 2.0 alpha 1
+    on hide:
+        linear 2.0 alpha 0
+        
 label splashscreen:
-    scene black with fade
-    show text "Insert Logo Here\n{size=9}kung meron man{/size}" with squares
-    $ renpy.pause(4)
-    hide text with fade
+    scene black
+    $ renpy.pause(1, hard=True)
+
+    show white at transform_white
+    $ renpy.pause(2, hard=True)
+
+    show logo at transform_logo
+    $ renpy.pause(4, hard=True)
+
+    hide logo
+    $ renpy.pause(2, hard=True)
+
+    hide white
+    $ renpy.pause(3, hard=True)
 
     scene black with dissolve
     show text "NETBEANS presents..." with dissolve
