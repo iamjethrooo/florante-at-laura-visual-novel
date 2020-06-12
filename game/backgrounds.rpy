@@ -13,3 +13,8 @@ image bg 8 = "bg8.png"
 image bg 9 = "bg9.png"
 image cabin = "Cabin1.png"
 image forest = "Forest2.png"
+
+
+image black = "#000"
+image white = "#ffffff"
+image logo = "fheart.png"
