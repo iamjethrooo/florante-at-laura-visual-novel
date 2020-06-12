@@ -1,6 +1,9 @@
 errors.txt
 log.txt
 traceback.txt
+files.txt
+*.bak
+*.rpymc
 *.rpyc
 *.rpyb
 *.save
