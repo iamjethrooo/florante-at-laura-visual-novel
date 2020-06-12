@@ -13,9 +13,9 @@
 ## The _() surrounding the string marks it as eligible for translation.
 init python:
     # config.debug_sound = False
-    falfont = "fonts/falfont.ttf"
-    config.thumbnail_height = 180 
-    config.thumbnail_width = 250
+    falfont = "fonts/Neuton-Light.ttf"
+#    config.thumbnail_height = 180 
+#    config.thumbnail_width = 250
 
 define config.name = _("Florante at Laura")
 
@@ -33,12 +33,9 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""TODO: 
-    Fix scaling of Florante's image
-    Art screen
-    Characters screen
-    Settings screen
-    Change icon
+define gui.about = _p("""I'm allergic to bee stings. They cause me to, uh, die. I don't like being outdoors, Smithers. For one thing, there's too many fat children. Inflammable means flammable? What a country. Uh, no, they're saying "Boo-urns, Boo-urns."
+
+Please do not offer my god a peanut. Marge, it takes two to lie. One to lie and one to listen. Ahoy hoy? Your questions have become more redundant and annoying than the last three "Highlander" movies. Uh, no, they're saying "Boo-urns, Boo-urns.
 """)
 
 

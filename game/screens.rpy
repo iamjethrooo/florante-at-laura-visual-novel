@@ -292,7 +292,7 @@ style quick_button_text:
 screen main_menu:
     tag menu
 
-    add "images/forest.jpg"
+    add "images/castle.png"
     add "gui/title.png"
     imagemap:
 
@@ -304,17 +304,17 @@ screen main_menu:
 
         alpha False
 
-        hotspot (558, 390, 139, 42) action Start()
+        hotspot (175, 310, 82, 44) action Start()
 
-        hotspot (560, 440, 118, 42) action ShowMenu("load")
+        hotspot (171, 361, 81, 41) action ShowMenu("load")
 
-        # hotspot (561, 537, 204, 48) action ShowMenu("preferences")
+        hotspot (174, 460, 130, 50) action ShowMenu("preferences")
 
-        hotspot (561, 485, 178, 49) action ShowMenu("extras") # extras
+        hotspot (175, 408, 105, 47) action ShowMenu("extras") # extras
 
-        hotspot (562, 591, 147, 40) action ShowMenu("about") # about
+        hotspot (176, 512, 97, 41) action ShowMenu("about") # about
 
-        hotspot (562, 635, 114, 53) action Quit(confirm=False)
+        hotspot (171, 562, 87, 45) action Quit(confirm=False)
 
 
 
@@ -326,10 +326,449 @@ screen main_menu:
 ## The scroll parameter can be None, or one of "viewport" or "vpgrid". When
 ## this screen is intended to be used with one or more children, which are
 ## transcluded (placed) inside it.
+screen game_menu(title, scroll=None):
+
+    style_prefix "game_menu"
+
+    if main_menu:
+        add gui.main_menu_background
+    else:
+        add gui.game_menu_background
+
+    frame:
+        style "game_menu_outer_frame"
+
+        hbox:
+
+            ## Reserve space for the navigation section.
+            frame:
+                style "game_menu_navigation_frame"
+
+            frame:
+                style "game_menu_content_frame"
+
+                if scroll == "viewport":
+
+                    viewport:
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+
+                        side_yfill True
+
+                        vbox:
+                            transclude
+
+                elif scroll == "vpgrid":
+
+                    vpgrid:
+                        cols 1
+                        yinitial 1.0
+
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        transclude
+
+                else:
+
+                    transclude
+
+    use navigation
+
+    textbutton _("Return"):
+        style "return_button"
+
+        action Return()
+
+    label title
+
+    if main_menu:
+        key "game_menu" action ShowMenu("main_menu")
+
+
+style game_menu_outer_frame is empty
+style game_menu_navigation_frame is empty
+style game_menu_content_frame is empty
+style game_menu_viewport is gui_viewport
+style game_menu_side is gui_side
+style game_menu_scrollbar is gui_vscrollbar
+
+style game_menu_label is gui_label
+style game_menu_label_text is gui_label_text
+
+style return_button is navigation_button
+style return_button_text is navigation_button_text
+
+style game_menu_outer_frame:
+    bottom_padding 30
+    top_padding 120
+
+    background "gui/overlay/game_menu.png"
+
+style game_menu_navigation_frame:
+    xsize 280
+    yfill True
+
+style game_menu_content_frame:
+    left_margin 40
+    right_margin 20
+    top_margin 10
+
+style game_menu_viewport:
+    xsize 920
+
+style game_menu_vscrollbar:
+    unscrollable gui.unscrollable
+
+style game_menu_side:
+    spacing 10
+
+style game_menu_label:
+    xpos 50
+    ysize 120
+
+style game_menu_label_text:
+    font "fonts/PrinceValiant.ttf"
+    size gui.title_text_size
+    color gui.accent_color
+    yalign 0.5
+
+style return_button:
+    xpos gui.navigation_xpos
+    yalign 1.0
+    yoffset -30
+
+## Load and Save screens #######################################################
+##
+## These screens are responsible for letting the player save the game and load
+## it again. Since they share nearly everything in common, both are implemented
+## in terms of a third screen, file_slots.
+##
+## https://www.renpy.org/doc/html/screen_special.html#save https://
+## www.renpy.org/doc/html/screen_special.html#load
+
+screen save():
+
+    tag menu
+
+    use file_slots(_("Save"))
+
+
+screen load():
+
+    tag menu
+
+    use file_slots(_("Load"))
+
+
+screen file_slots(title):
+
+    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
+
+    use game_menu(title):
+
+        fixed:
+
+            ## This ensures the input will get the enter event before any of the
+            ## buttons do.
+            order_reverse True
+
+            ## The page name, which can be edited by clicking on a button.
+            button:
+                style "page_label"
+
+                key_events True
+                xalign 0.5
+                action page_name_value.Toggle()
+
+                input:
+                    style "page_label_text"
+                    value page_name_value
+
+            ## The grid of file slots.
+            grid gui.file_slot_cols gui.file_slot_rows:
+                style_prefix "slot"
+
+                xalign 0.5
+                yalign 0.5
+
+                spacing gui.slot_spacing
+
+                for i in range(gui.file_slot_cols * gui.file_slot_rows):
+
+                    $ slot = i + 1
+
+                    button:
+                        action FileAction(slot)
+
+                        has vbox
+
+                        add FileScreenshot(slot) xalign 0.5
+
+                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                            style "slot_time_text"
+
+                        text FileSaveName(slot):
+                            style "slot_name_text"
+
+                        key "save_delete" action FileDelete(slot)
+
+            ## Buttons to access other pages.
+            hbox:
+                style_prefix "page"
+
+                xalign 0.5
+                yalign 1.0
+
+                spacing gui.page_spacing
+
+                textbutton _("<") action FilePagePrevious()
+
+                if config.has_autosave:
+                    textbutton _("{#auto_page}A") action FilePage("auto")
+
+                if config.has_quicksave:
+                    textbutton _("{#quick_page}Q") action FilePage("quick")
+
+                ## range(1, 10) gives the numbers from 1 to 9.
+                for page in range(1, 10):
+                    textbutton "[page]" action FilePage(page)
+
+                textbutton _(">") action FilePageNext()
+
+
+style page_label is gui_label
+style page_label_text is gui_label_text
+style page_button is gui_button
+style page_button_text is gui_button_text
+
+style slot_button is gui_button
+style slot_button_text is gui_button_text
+style slot_time_text is slot_button_text
+style slot_name_text is slot_button_text
+
+style page_label:
+    xpadding 50
+    ypadding 3
+
+style page_label_text:
+    text_align 0.5
+    layout "subtitle"
+    hover_color gui.hover_color
+
+style page_button:
+    properties gui.button_properties("page_button")
+
+style page_button_text:
+    properties gui.button_text_properties("page_button")
+
+style slot_button:
+    properties gui.button_properties("slot_button")
+
+style slot_button_text:
+    properties gui.button_text_properties("slot_button")
+
+## Preferences screen ##########################################################
+##
+## The preferences screen allows the player to configure the game to better suit
+## themselves.
+##
+## https://www.renpy.org/doc/html/screen_special.html#preferences
 
 screen preferences():
 
     tag menu
+    use navigation
+
+    if renpy.mobile:
+        $ cols = 2
+    else:
+        $ cols = 4
+
+    use game_menu(_("Preferences"), scroll="viewport"):
+
+        vbox:
+
+            hbox:
+                box_wrap True
+
+                if renpy.variant("pc") or renpy.variant("web"):
+
+                    vbox:
+                        style_prefix "radio"
+                        label _("Display")
+                        textbutton _("Window") action Preference("display", "window")
+                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+
+#                 vbox:
+#                     style_prefix "radio"
+#                     label _("Rollback Side")
+#                     textbutton _("Disable") action Preference("rollback side", "disable")
+#                     textbutton _("Left") action Preference("rollback side", "left")
+#                     textbutton _("Right") action Preference("rollback side", "right")
+
+                vbox:
+                    style_prefix "check"
+                    label _("Skip")
+                    textbutton _("Unseen Text") action Preference("skip", "toggle")
+                    textbutton _("After Choices") action Preference("after choices", "toggle")
+                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+
+
+#                vbox:
+#                    style_prefix "check"
+#                    label _("Examples")
+#                    textbutton _("Translations") action ToggleField(persistent, "show_translation_marker")
+
+#begin language_picker
+                ## Additional vboxes of type "radio_pref" or "check_pref" can be
+                ## added here, to add additional creator-defined preferences.
+
+#                vbox:
+#                    style_prefix "radio"
+#                    label _("Language")
+
+                    # Real languages should go alphabetical order by English name.
+#                    textbutton "English" text_font "DejaVuSans.ttf" action Language(None)
+#                    textbutton "Français" text_font "DejaVuSans.ttf" action Language("french")
+#                    textbutton "Русский" text_font "DejaVuSans.ttf" action Language("russian")
+#                    textbutton "Español" text_font "DejaVuSans.ttf" action Language("spanish")
+#                    textbutton "한국어" text_font "../../launcher/game/fonts/NanumGothic.ttf" action Language("korean")
+
+                    # This should be last.
+#                    textbutton "Pig Latin" text_font "DejaVuSans.ttf" action Language("piglatin")
+
+
+#end language_picker
+
+            null height (4 * gui.pref_spacing)
+
+            hbox:
+                style_prefix "slider"
+                box_wrap True
+
+                vbox:
+
+                    label _("Text Speed")
+
+                    bar value Preference("text speed")
+
+                    label _("Auto-Forward Time")
+
+                    bar value Preference("auto-forward time")
+
+                vbox:
+
+                    if config.has_music:
+                        label _("Music Volume")
+
+                        hbox:
+                            bar value Preference("music volume")
+
+                    if config.has_sound:
+
+                        label _("Sound Volume")
+
+                        hbox:
+                            bar value Preference("sound volume")
+
+                            if config.sample_sound:
+                                textbutton _("Test") action Play("sound", config.sample_sound)
+
+
+                    if config.has_voice:
+                        label _("Voice Volume")
+
+                        hbox:
+                            bar value Preference("voice volume")
+
+                            if config.sample_voice:
+                                textbutton _("Test") action Play("voice", config.sample_voice)
+
+                    if config.has_music or config.has_sound or config.has_voice:
+                        null height gui.pref_spacing
+
+                        textbutton _("Mute All"):
+                            action Preference("all mute", "toggle")
+                            style "mute_all_button"
+
+
+style pref_label is gui_label
+style pref_label_text is gui_label_text
+style pref_vbox is vbox
+
+style radio_label is pref_label
+style radio_label_text is pref_label_text
+style radio_button is gui_button
+style radio_button_text is gui_button_text
+style radio_vbox is pref_vbox
+
+style check_label is pref_label
+style check_label_text is pref_label_text
+style check_button is gui_button
+style check_button_text is gui_button_text
+style check_vbox is pref_vbox
+
+style slider_label is pref_label
+style slider_label_text is pref_label_text
+style slider_slider is gui_slider
+style slider_button is gui_button
+style slider_button_text is gui_button_text
+style slider_pref_vbox is pref_vbox
+
+style mute_all_button is check_button
+style mute_all_button_text is check_button_text
+
+style pref_label:
+    top_margin gui.pref_spacing
+    bottom_margin 2
+
+style pref_label_text:
+    yalign 1.0
+
+style pref_vbox:
+    xsize 225
+
+style radio_vbox:
+    spacing gui.pref_button_spacing
+
+style radio_button:
+    properties gui.button_properties("radio_button")
+    foreground "gui/button/radio_[prefix_]foreground.png"
+
+style radio_button_text:
+    properties gui.button_text_properties("radio_button")
+
+style check_vbox:
+    spacing gui.pref_button_spacing
+
+style check_button:
+    properties gui.button_properties("check_button")
+    foreground "gui/button/check_[prefix_]foreground.png"
+
+style check_button_text:
+    properties gui.button_text_properties("check_button")
+
+style slider_slider:
+    xsize 350
+
+style slider_button:
+    properties gui.button_properties("slider_button")
+    yalign 0.5
+    left_margin 10
+
+style slider_button_text:
+    properties gui.button_text_properties("slider_button")
+
+style slider_vbox:
+    xsize 450
 
 
 ################################################################################
@@ -721,3 +1160,180 @@ style slider_pref_vbox:
 
 style slider_pref_slider:
     variant "small"
+
+
+################################################################################
+## Custom Screens
+################################################################################
+
+screen extras:
+    tag menu
+
+    imagemap:
+        ground "gui/extras ground.png"
+
+        hover "gui/extras hovered.png"
+
+        hotspot (8, 8, 184, 46) action Return() # return
+
+        hotspot (54, 182, 371, 255) action ShowMenu("coming_soon") # art
+
+        hotspot (460, 184, 371, 254) action ShowMenu("coming_soon") # characters
+
+        hotspot (868, 183, 370, 259) action ShowMenu("chapterpicker") # chapters
+
+## Navigation screen ###########################################################
+##
+## This screen is included in the main and game menus, and provides navigation
+## to other menus, and to start the game.
+
+screen navigation():
+
+    vbox:
+        style_prefix "navigation"
+
+        xpos gui.navigation_xpos
+        yalign 0.5
+
+        spacing gui.navigation_spacing
+
+        if main_menu:
+
+            textbutton _("Start") action Start()
+
+        else:
+
+            textbutton _("Save") action ShowMenu("save")
+
+        textbutton _("Load") action ShowMenu("load")
+
+        if main_menu:
+
+            textbutton _("Extras") action ShowMenu("extras")
+
+        textbutton _("Settings") action ShowMenu("preferences")
+
+        if _in_replay:
+
+            textbutton _("End Replay") action EndReplay(confirm=True)
+
+        elif not main_menu:
+
+            textbutton _("Main Menu") action MainMenu()
+
+        textbutton _("About") action ShowMenu("about")
+
+        if renpy.variant("pc"):
+
+            ## The quit button is banned on iOS and unnecessary on Android and Web.
+            textbutton _("Quit") action Quit(confirm=not main_menu)
+
+
+style navigation_button is gui_button
+style navigation_button_text is gui_button_text
+
+style navigation_button:
+    size_group "navigation"
+    properties gui.button_properties("navigation_button")
+
+style navigation_button_text:
+    font "fonts/PrinceValiant.ttf"
+    size 30
+    properties gui.button_text_properties("navigation_button")
+
+screen about:
+    tag menu
+    use navigation
+    add "gui/about.png"
+
+    ## This use statement includes the game_menu screen inside this one. The
+    ## vbox child is then included inside the viewport inside the game_menu
+    ## screen.
+    use game_menu(_("About"), scroll="viewport"):
+        style_prefix "about"
+
+        vbox:
+
+            label "[config.name!t]"
+            text _("Version [config.version!t]\n")
+
+            ## gui.about is usually set in options.rpy.
+            if gui.about:
+                text "[gui.about!t]\n"
+
+            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+
+style about_label is gui_label
+style about_label_text is gui_label_text
+style about_text is gui_text
+
+style about_label_text:
+    size gui.label_text_size
+
+screen chapterpicker:
+    tag menu
+    use navigation
+
+    imagemap:
+        ground "gui/chapterpicker1 ground.png"
+        idle "gui/chapterpicker1 idle.png"
+        hover "gui/chapterpicker1 hover.png"
+        selected_idle "gui/chapterpicker1 hover.png"
+        selected_hover "gui/chapterpicker1 hover.png"
+
+        alpha False
+
+        if persistent.ch01:
+            hotspot (257, 90, 219, 42) action Start("ch01")
+        if persistent.ch02:
+            hotspot (258, 206, 229, 44) action Start("ch02")
+        if persistent.ch03:
+            hotspot (257, 326, 227, 43) action Start("ch03")
+        if persistent.ch04:
+            hotspot (259, 446, 223, 42) action Start("ch04")
+        if persistent.ch05:
+            hotspot (257, 563, 231, 41) action Start("ch05")
+        if persistent.ch06:
+            hotspot (784, 91, 236, 38) action Start("ch06")
+        if persistent.ch07:
+            hotspot (787, 207, 231, 48) action Start("ch07")
+        if persistent.ch08:
+            hotspot (787, 327, 229, 43) action Start("ch08")
+        if persistent.ch09:
+            hotspot (787, 447, 229, 43) action Start("ch09")
+        if persistent.ch10:
+            hotspot (787, 566, 241, 38) action Start("ch10")
+
+
+screen characters:
+    tag menu
+    use navigation
+
+    imagemap:
+        ground "gui/characters ground.png"
+        idle "gui/characters idle.png"
+        hover "gui/characters hover.png"
+        selected_idle "gui/characters hover.png"
+        selected_hover "gui/characters hover.png"
+
+        hotspot (294, 139, 262, 70) action Show("character_details", None, "Florante", "Makisig na binatang anak ni Duke Briseo at Prinsesa Floresca.  \nSiya ang pangunahing tauhan ng awit.  \nHalal na Heneral ng hukbo ng Albanya.  \nMagiting na bayani, mandirigma at heneral ng hukbong \nmagtatanggol sa pagsalakay ng mga Persiyano at Turko.")
+
+screen character_details(name, desc):
+    tag menu
+    use navigation
+
+    text "{size=50}[name]{/size}":
+        font falfont
+        xpos 300
+        ypos 150
+        outlines [ (2, "#000000", 0, 0)]
+    text "{size=25}[desc]{/size}":
+        font falfont
+        xpos 300
+        ypos 200
+        outlines [ (2, "#000000", 0, 0)]
+
+screen coming_soon:
+    tag menu
+    use navigation
+    add "gui/comingsoon.png"
