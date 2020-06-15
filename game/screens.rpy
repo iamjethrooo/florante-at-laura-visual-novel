@@ -607,25 +607,25 @@ screen preferences():
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
-#                 vbox:
-#                     style_prefix "radio"
-#                     label _("Rollback Side")
-#                     textbutton _("Disable") action Preference("rollback side", "disable")
-#                     textbutton _("Left") action Preference("rollback side", "left")
-#                     textbutton _("Right") action Preference("rollback side", "right")
+#                    vbox:
+#                       style_prefix "radio"
+#                        label _("Rollback Side")
+#                        textbutton _("Disable") action Preference("rollback side", "disable")
+#                        textbutton _("Left") action Preference("rollback side", "left")
+#                        textbutton _("Right") action Preference("rollback side", "right")
 
-                vbox:
-                    style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+#                   vbox:
+#                        style_prefix "check"
+#                        label _("Skip")
+#                        textbutton _("Unseen Text") action Preference("skip", "toggle")
+#                        textbutton _("After Choices") action Preference("after choices", "toggle")
+#                        textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
 
-#                vbox:
-#                    style_prefix "check"
-#                    label _("Examples")
-#                    textbutton _("Translations") action ToggleField(persistent, "show_translation_marker")
+#                    vbox:
+#                        style_prefix "check"
+#                        label _("Examples")
+#                        textbutton _("Translations") action ToggleField(persistent, "show_translation_marker")
 
 #begin language_picker
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
@@ -1169,18 +1169,31 @@ style slider_pref_slider:
 screen extras:
     tag menu
 
-    imagemap:
-        ground "gui/extras ground.png"
+    use game_menu(_("Extras")):
 
-        hover "gui/extras hovered.png"
+        fixed:
+            style_prefix "extras"
+            vbox:
+                yalign 0.2
+                textbutton _("Art Gallery") action ShowMenu("gallery")
+            vbox:
+                yalign 0.4
+                textbutton _("Chapter Picker") action ShowMenu("chapterpicker")                
+            vbox:
+                yalign 0.6
+                textbutton _("Characters") action ShowMenu("characters")
 
-        hotspot (8, 8, 184, 46) action Return() # return
+style extras_vbox is vbox
+style ebutton_button is gui_button
+style ebutton_button_text is gui_button_text
 
-        hotspot (54, 182, 371, 255) action ShowMenu("coming_soon") # art
+style extras_vbox:
+    xalign 0.5
 
-        hotspot (460, 184, 371, 254) action ShowMenu("coming_soon") # characters
-
-        hotspot (868, 183, 370, 259) action ShowMenu("chapterpicker") # chapters
+style extras_button_text:
+    #xalign 0.5
+    font "fonts/PrinceValiant.ttf"
+    size 40
 
 ## Navigation screen ###########################################################
 ##
@@ -1307,21 +1320,35 @@ screen chapterpicker:
 
 screen characters:
     tag menu
-    use navigation
 
-    imagemap:
-        ground "gui/characters ground.png"
-        idle "gui/characters idle.png"
-        hover "gui/characters hover.png"
-        selected_idle "gui/characters hover.png"
-        selected_hover "gui/characters hover.png"
+    use game_menu(_("Characters")):
+        fixed:
+            vpgrid:
+                style_prefix "chars"
+                xalign 0.5
+                yalign 0.2
+                cols 2
+                spacing 50
+                draggable True
+                mousewheel True
 
-        hotspot (294, 139, 262, 70) action Show("character_details", None, "Florante", "Makisig na binatang anak ni Duke Briseo at Prinsesa Floresca.  \nSiya ang pangunahing tauhan ng awit.  \nHalal na Heneral ng hukbo ng Albanya.  \nMagiting na bayani, mandirigma at heneral ng hukbong \nmagtatanggol sa pagsalakay ng mga Persiyano at Turko.")
 
+                vbox:
+                    textbutton _("Florante") action Return()
+                vbox:
+                    textbutton _("Laura") action Return()               
+                vbox:
+                    textbutton _("Adolfo") action Return()
+                vbox:
+                    textbutton _("Flerida") action Return()
+                vbox:
+                    textbutton _("Aladin") action Return()
+
+style chars_button_text:
+    font "fonts/PrinceValiant.ttf"
+    size 35
+##
 screen character_details(name, desc):
-    tag menu
-    use navigation
-
     text "{size=50}[name]{/size}":
         font falfont
         xpos 300
