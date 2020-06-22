@@ -24,7 +24,6 @@ style hyperlink_text:
 style gui_text:
     properties gui.text_properties("interface")
 
-
 style button:
     properties gui.button_properties("button")
 
@@ -384,8 +383,14 @@ screen game_menu(title, scroll=None):
 
     textbutton _("Return"):
         style "return_button"
-
-        action Return()
+        if renpy.get_screen("gallery") or renpy.get_screen("chapterpicker") or renpy.get_screen("characters"):
+            action ShowMenu("extras")
+        elif renpy.get_screen("character_card"):
+            action ShowMenu("characters")
+        elif renpy.get_screen("arc01") or renpy.get_screen("arc02") or renpy.get_screen("arc03"):
+            action ShowMenu("chapterpicker")
+        else:
+            action Return()
 
     label title
 
@@ -1161,40 +1166,6 @@ style slider_pref_vbox:
 style slider_pref_slider:
     variant "small"
 
-
-################################################################################
-## Custom Screens
-################################################################################
-
-screen extras:
-    tag menu
-
-    use game_menu(_("Extras")):
-
-        fixed:
-            style_prefix "extras"
-            vbox:
-                yalign 0.2
-                textbutton _("Art Gallery") action ShowMenu("gallery")
-            vbox:
-                yalign 0.4
-                textbutton _("Chapter Picker") action ShowMenu("chapterpicker")                
-            vbox:
-                yalign 0.6
-                textbutton _("Characters") action ShowMenu("characters")
-
-style extras_vbox is vbox
-style ebutton_button is gui_button
-style ebutton_button_text is gui_button_text
-
-style extras_vbox:
-    xalign 0.5
-
-style extras_button_text:
-    #xalign 0.5
-    font "fonts/PrinceValiant.ttf"
-    size 40
-
 ## Navigation screen ###########################################################
 ##
 ## This screen is included in the main and game menus, and provides navigation
@@ -1282,85 +1253,3 @@ style about_text is gui_text
 
 style about_label_text:
     size gui.label_text_size
-
-screen chapterpicker:
-    tag menu
-    use navigation
-
-    imagemap:
-        ground "gui/chapterpicker1 ground.png"
-        idle "gui/chapterpicker1 idle.png"
-        hover "gui/chapterpicker1 hover.png"
-        selected_idle "gui/chapterpicker1 hover.png"
-        selected_hover "gui/chapterpicker1 hover.png"
-
-        alpha False
-
-        if persistent.ch01:
-            hotspot (257, 90, 219, 42) action Start("ch01")
-        if persistent.ch02:
-            hotspot (258, 206, 229, 44) action Start("ch02")
-        if persistent.ch03:
-            hotspot (257, 326, 227, 43) action Start("ch03")
-        if persistent.ch04:
-            hotspot (259, 446, 223, 42) action Start("ch04")
-        if persistent.ch05:
-            hotspot (257, 563, 231, 41) action Start("ch05")
-        if persistent.ch06:
-            hotspot (784, 91, 236, 38) action Start("ch06")
-        if persistent.ch07:
-            hotspot (787, 207, 231, 48) action Start("ch07")
-        if persistent.ch08:
-            hotspot (787, 327, 229, 43) action Start("ch08")
-        if persistent.ch09:
-            hotspot (787, 447, 229, 43) action Start("ch09")
-        if persistent.ch10:
-            hotspot (787, 566, 241, 38) action Start("ch10")
-
-
-screen characters:
-    tag menu
-
-    use game_menu(_("Characters")):
-        fixed:
-            vpgrid:
-                style_prefix "chars"
-                xalign 0.5
-                yalign 0.2
-                cols 2
-                spacing 50
-                draggable True
-                mousewheel True
-
-
-                vbox:
-                    textbutton _("Florante") action Return()
-                vbox:
-                    textbutton _("Laura") action Return()               
-                vbox:
-                    textbutton _("Adolfo") action Return()
-                vbox:
-                    textbutton _("Flerida") action Return()
-                vbox:
-                    textbutton _("Aladin") action Return()
-
-style chars_button_text:
-    font "fonts/PrinceValiant.ttf"
-    size 35
-##
-screen character_details(name, desc):
-    text "{size=50}[name]{/size}":
-        font falfont
-        xpos 300
-        ypos 150
-        outlines [ (2, "#000000", 0, 0)]
-    text "{size=25}[desc]{/size}":
-        font falfont
-        xpos 300
-        ypos 200
-        outlines [ (2, "#000000", 0, 0)]
-
-screen coming_soon:
-    tag menu
-    use navigation
-    add "gui/comingsoon.png"
