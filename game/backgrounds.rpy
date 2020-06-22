@@ -25,7 +25,7 @@ image albania 2 night = "Albania 2.png" #
 image persia 1 = "Persia Ext 1.png" #
 image persia 2 = "Persia Ext 2.png"
 image persia_int 2 = "Persia Ext 2.png" #
-image persia_int 1  night = "Persia Ext 2.png" #
+image persia_int 1 night = "Persia Ext 2.png" #
 image persia 1 night = "Persia Ext 1.png" #
 
 
