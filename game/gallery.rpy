@@ -21,8 +21,8 @@ init python:
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
-    g.button("Aladin's Makeshift home")
-    g.image("Aladin's Makeshift home")
+    g.button("Aladin's Makeshift Home")
+    g.image("Aladin's Makeshift Home")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
