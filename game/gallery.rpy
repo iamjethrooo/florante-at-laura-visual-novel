@@ -7,71 +7,168 @@ init python:
     # Step 2. Add buttons and images to the gallery.
 
     # A button with an image that is always unlocked.
-    g.button("bg1")
-    g.image("bg1")
+    g.button("Forest 1")
+    g.image("Forest 1")
     g.condition("True")
     # A button that contains an image that automatically unlocks.
-    g.button("bg2")
-    g.image("bg2")
+    g.button("Higera")
+    g.image("Higera")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
-    g.button("bg3")
-    g.image("bg3")
+    g.button("Forest 2")
+    g.image("Forest 2")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
-    g.button("bg4")
-    g.image("bg 4")
+    g.button("Aladin's Makeshift home")
+    g.image("Aladin's Makeshift home")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
-    g.button("bg5")
-    g.image("bg 5")
+    g.button("Flat Rock")
+    g.image("Flat Rock")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
-    g.button("bg6")
-    g.image("bg 6")
+    g.button("Mountains")
+    g.image("Mountains")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
-    g.button("bg7")
-    g.image("bg 7")
+    g.button("Athens 1")
+    g.image("Athens 1")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
-    g.button("bg8")
-    g.image("bg 8")
+    g.button("Athens 2")
+    g.image("Athens 2")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
-    g.button("bg9")
-    g.image("bg 9")
+    g.button("Athens Stage")
+    g.image("Athens Stage")
     g.condition("True")
 
-    g.button("florante")
-    g.unlock_image("florante")
+    g.button("Athens 3")
+    g.image("Athens 3")
+    g.condition("True")
+
+    g.button("Albania 1")
+    g.image("Albania 1")
+    g.condition("True")
+
+    g.button("Albania Interior 1")
+    g.image("Albania Interior 1")
+    g.condition("True")
+
+    g.button("Albania Interior 2")
+    g.image("Albania Interior 2")
+    g.condition("True")
+
+    g.button("Albania 2")
+    g.image("Albania 2")
+    g.condition("True")
+
+    g.button("Croton Exterior 1")
+    g.image("Croton Exterior 1")
+    g.condition("True")
+
+    g.button("Croton Exterior 2")
+    g.image("Croton Exterior 2")
+    g.condition("True")
+
+    g.button("Croton Interior 1")
+    g.image("Croton Interior 1")
+    g.condition("True")
+
+    g.button("Aetolia")
+    g.image("Aetolia")
+    g.condition("True")
+
+    g.button("Forest 2 Night")
+    g.image("Forest 2 Night")
+    g.condition("True")
+
+    g.button("Albania 2 Night")
+    g.image("Albania 2 Night")
+    g.condition("True")
+
+    g.button("Persia 1")
+    g.image("Persia 1")
+    g.condition("True")
+
+    g.button("Persia 2")
+    g.image("Persia 2")
+    g.condition("True")
+
+    g.button("Persia Interior 2")
+    g.image("Persia Interior 2")
+    g.condition("True")
+
+    g.button("Persia Interior 1 Night")
+    g.image("Persia Interior 1 Night")
+    g.condition("True")
+
+    g.button("Persia 1 Night")
+    g.image("Persia 1 Night")
+    g.condition("True")
+
+    g.button("Florante")
+    g.image("characters/cards/Florante.png")
+    g.condition("True")
+
+    g.button("Laura")
+    g.image("characters/cards/Laura.png")
+    g.condition("True")
+
+    g.button("Adolfo")
+    g.image("characters/cards/Adolfo.png")
+    g.condition("True")
+
+    g.button("Flerida")
+    g.image("characters/cards/Flerida.png")
+    g.condition("True")
+
+    g.button("Aladin")
+    g.image("characters/cards/Aladin.png")
+    g.condition("True")
 
     g_buttons_pages = [
         [
-            ("bg1", "bg1", "bg1.png"),
-            ("bg2", "bg2", "bg2.png"),
-            ("bg3", "bg3", "bg3.png"),
-            ("bg4", "bg4", "bg4.png"),
-            ("bg5", "bg5", "bg5.png"),
-            ("bg6", "bg6", "bg6.png")
+            ("Forest 1", "Forest 1", "forest1.png"),
+            ("Higera", "Higera", "Higera.png"),
+            ("Forest 2", "Forest 2", "Forest 2.png"),
+            ("Aladin's Makeshift Home", "Aladin's Makeshift Home", "Aladin's Makeshift Home.png"),
+            ("Flat Rock", "Flat Rock", "Flat Rock.png"),
+            ("Mountains", "Mountains", "Mountains.png")
         ],
         [
-            ("bg7", "bg1", "bg1.png"),
-            ("bg8", "bg2", "bg2.png"),
-            ("bg9", "bg3", "bg3.png"),
-            (None, None, None),
-            (None, None, None),
-            (None, None, None)
+            ("Athens 1", "Athens 1", "Athens 1.png"),
+            ("Athens 2", "Athens 2", "Athens 2.png"),
+            ("Athens Stage", "Athens Stage", "Athens Stage.png"),
+            ("Athens 3", "Athens 3", "Athens 3.png"),
+            ("Albania 1", "Albania 1", "Albania 1.png"),
+            ("Albania Interior 1", "Albania Interior 1", "albania int 1.png")
         ],
         [
-            (None, None, None),
+            ("Albania Interior 2", "Albania Interior 2", "albania int 1.png"),
+            ("Albania 2", "Albania 2", "Albania 2.png"),
+            ("Croton Exterior 1", "Croton Exterior 1", "Croton Ext 2.png"),
+            ("Croton Exterior 2", "Croton Exterior 2", "Croton Ext 2.png"),
+            ("Croton Interior 1", "Croton Interior 1", "Croton Ext 2.png"),
+            ("Aetolia","Aetolia", "aetolia.png")
+        ],
+        [
+            ("Forest 2 Night", "Forest 2 Night", "Forest 2.png"),
+            ("Albania 2 Night", "Albania 2 Night", "Albania 2.png"),
+            ("Persia 1", "Persia 1", "Persia Ext 1.png"),
+            ("Persia 2", "Persia 2", "Persia Ext 2.png"),
+            ("Persia Interior 2", "Persia Interior 2", "Persia Ext 2.png"),
+            ("Persia Interior 1 Night", "Persia Interior 1 Night", "Persia Ext 2.png")
+        ],
+        [
+            ("Persia 1 Night", "Persia 1 Night", "Persia Ext 1.png"),
             (None, None, None),
             (None, None, None),
             (None, None, None),
