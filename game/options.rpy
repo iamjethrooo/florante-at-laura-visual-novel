@@ -33,10 +33,9 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""I'm allergic to bee stings. They cause me to, uh, die. I don't like being outdoors, Smithers. For one thing, there's too many fat children. Inflammable means flammable? What a country. Uh, no, they're saying "Boo-urns, Boo-urns."
+define gui.about = _p("""Homer no function beer well without. That's why I love elementary school, Edna. The children believe anything you tell them. Don't kid yourself, Jimmy. If a cow ever got the chance, he'd eat you and everyone you care about!
 
-Please do not offer my god a peanut. Marge, it takes two to lie. One to lie and one to listen. Ahoy hoy? Your questions have become more redundant and annoying than the last three "Highlander" movies. Uh, no, they're saying "Boo-urns, Boo-urns.
-""")
+Beer. Now there's a temporary solution. Oh, I'm in no condition to drive. Wait a minute. I don't have to listen to myself. I'm drunk. Marge, just about everything's a sin. Y'ever sat down and read this thing? Technically we're not supposed to go to the bathroom.""")
 
 
 ## A short name for the game used for executables and directories in the built
