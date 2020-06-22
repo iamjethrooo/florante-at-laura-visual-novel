@@ -2,17 +2,31 @@
 ## Background Images
 ################################################################################
 
-image bg 1 = "bg1.png"
-image bg 2 = "bg2.png"
-image bg 3 = "bg3.jpg"
-image bg 4 = "bg4.png"
-image bg 5 = "bg5.png"
-image bg 6 = "bg6.png"
-image bg 7 = "bg7.png"
-image bg 8 = "bg8.png"
-image bg 9 = "bg9.png"
-image cabin = "Cabin1.png"
-image forest = "Forest2.png"
+image forest 1 = "forest1.png"
+image higera = "Higera.png"
+image forest 2 = "Forest 2.png"
+image aladin makeshift home = "Aladin's Makeshift Home.png"
+image flat rock = "Flat Rock.png"
+image mountains = "Mountains.png"
+image athens 1 = "Athens1.png"
+image athens 2 = "Athens 2.png"
+image athens stage = "Athens Stage.png"
+image athens 3 = "Athens 3.png"
+image albania 1 = "Albania 1.png"
+image albania_int 1 = "albanita int 1.png"
+image albania_int 2 = "albania int 1.png" #
+image albania 2 = "Albania 2.png" #
+image croton_ext 1 = "Croton Ext 2.png" #
+image croton_ext 2 = "Croton Ext 2.png"
+image croton_int 1 = "Croton Ext 2.png" #
+image aetolia = "aetolia.png"
+image forest 2 night = "Forest 2.png" #
+image albania 2 night = "Albania 2.png" #
+image persia 1 = "Persia Ext 1.png" #
+image persia 2 = "Persia Ext 2.png"
+image persia_int 2 = "Persia Ext 2.png" #
+image persia_int 1  night = "Persia Ext 2.png" #
+image persia 1 night = "Persia Ext 1.png" #
 
 
 image black = "#000"
