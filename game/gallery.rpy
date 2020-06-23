@@ -7,113 +7,68 @@ init python:
     # Step 2. Add buttons and images to the gallery.
 
     # A button with an image that is always unlocked.
-    g.button("Forest 1")
-    g.image("Forest 1")
-    g.condition("True")
-    # A button that contains an image that automatically unlocks.
-    g.button("Higera")
-    g.image("Higera")
+    g.button("Forest")
+    g.image("forest1.png")
+    g.image("Forest 2.png")
+    # Forest 2 Night
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
-    g.button("Forest 2")
-    g.image("Forest 2")
+    g.button("Higera")
+    g.image("Higera.png")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
     g.button("Aladin's Makeshift Home")
-    g.image("Aladin's Makeshift Home")
+    g.image("Aladin's Makeshift Home.png")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
     g.button("Flat Rock")
-    g.image("Flat Rock")
+    g.image("Flat Rock.png")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
     g.button("Mountains")
-    g.image("Mountains")
+    g.image("Mountains.png")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
-    g.button("Athens 1")
-    g.image("Athens 1")
+    g.button("Athens")
+    g.image("Athens 1.png")
+    g.image("Athens 2.png")
+    g.image("Athens 3.png")
+    g.image("Athens Stage.png")
     g.condition("True")
 
-    # A button that contains an image that automatically unlocks.
-    g.button("Athens 2")
-    g.image("Athens 2")
+    g.button("Albania")
+    g.image("Albania 1.png")
+    g.image("albania int 1.png")
+    ## insert albania int 2
+    ## insert albania 2
+    # Albania 2 Night
     g.condition("True")
 
-    # A button that contains an image that automatically unlocks.
-    g.button("Athens Stage")
-    g.image("Athens Stage")
-    g.condition("True")
-
-    g.button("Athens 3")
-    g.image("Athens 3")
-    g.condition("True")
-
-    g.button("Albania 1")
-    g.image("Albania 1")
-    g.condition("True")
-
-    g.button("Albania Interior 1")
-    g.image("Albania Interior 1")
-    g.condition("True")
-
-    g.button("Albania Interior 2")
-    g.image("Albania Interior 2")
-    g.condition("True")
-
-    g.button("Albania 2")
-    g.image("Albania 2")
-    g.condition("True")
-
-    g.button("Croton Exterior 1")
-    g.image("Croton Exterior 1")
-    g.condition("True")
-
-    g.button("Croton Exterior 2")
-    g.image("Croton Exterior 2")
-    g.condition("True")
-
-    g.button("Croton Interior 1")
-    g.image("Croton Interior 1")
+    g.button("Croton")
+    ## Croton Ext 1
+    g.image("Croton Ext 2.png")
+    ## Croton Int 1
     g.condition("True")
 
     g.button("Aetolia")
-    g.image("Aetolia")
+    g.image("aetolia.png")
     g.condition("True")
 
-    g.button("Forest 2 Night")
-    g.image("Forest 2 Night")
+    g.button("Persia")
+    g.image("Persia Ext 1.png")
+    g.image("Persia Ext 2.png")
+    # Persia Int 2
+    # Persia Int 1 Night
+    # Persia 1 Night
     g.condition("True")
 
-    g.button("Albania 2 Night")
-    g.image("Albania 2 Night")
-    g.condition("True")
 
-    g.button("Persia 1")
-    g.image("Persia 1")
-    g.condition("True")
-
-    g.button("Persia 2")
-    g.image("Persia 2")
-    g.condition("True")
-
-    g.button("Persia Interior 2")
-    g.image("Persia Interior 2")
-    g.condition("True")
-
-    g.button("Persia Interior 1 Night")
-    g.image("Persia Interior 1 Night")
-    g.condition("True")
-
-    g.button("Persia 1 Night")
-    g.image("Persia 1 Night")
-    g.condition("True")
-
+    ## Character Cards
     g.button("Florante")
     g.image("characters/cards/Florante.png")
     g.condition("True")
@@ -136,45 +91,21 @@ init python:
 
     g_buttons_pages = [
         [
-            ("Forest 1", "Forest 1", "forest1.png"),
+            ("Forest", "Forest", "forest1.png"),
             ("Higera", "Higera", "Higera.png"),
-            ("Forest 2", "Forest 2", "Forest 2.png"),
             ("Aladin's Makeshift Home", "Aladin's Makeshift Home", "Aladin's Makeshift Home.png"),
             ("Flat Rock", "Flat Rock", "Flat Rock.png"),
-            ("Mountains", "Mountains", "Mountains.png")
+            ("Mountains", "Mountains", "Mountains.png"),
+            ("Athens", "Athens", "Athens 1.png")
         ],
         [
-            ("Athens 1", "Athens 1", "Athens 1.png"),
-            ("Athens 2", "Athens 2", "Athens 2.png"),
-            ("Athens Stage", "Athens Stage", "Athens Stage.png"),
-            ("Athens 3", "Athens 3", "Athens 3.png"),
-            ("Albania 1", "Albania 1", "Albania 1.png"),
-            ("Albania Interior 1", "Albania Interior 1", "albania int 1.png")
-        ],
-        [
-            ("Albania Interior 2", "Albania Interior 2", "albania int 1.png"),
-            ("Albania 2", "Albania 2", "Albania 2.png"),
-            ("Croton Exterior 1", "Croton Exterior 1", "Croton Ext 2.png"),
-            ("Croton Exterior 2", "Croton Exterior 2", "Croton Ext 2.png"),
-            ("Croton Interior 1", "Croton Interior 1", "Croton Ext 2.png"),
-            ("Aetolia","Aetolia", "aetolia.png")
-        ],
-        [
-            ("Forest 2 Night", "Forest 2 Night", "Forest 2.png"),
-            ("Albania 2 Night", "Albania 2 Night", "Albania 2.png"),
-            ("Persia 1", "Persia 1", "Persia Ext 1.png"),
-            ("Persia 2", "Persia 2", "Persia Ext 2.png"),
-            ("Persia Interior 2", "Persia Interior 2", "Persia Ext 2.png"),
-            ("Persia Interior 1 Night", "Persia Interior 1 Night", "Persia Ext 2.png")
-        ],
-        [
-            ("Persia 1 Night", "Persia 1 Night", "Persia Ext 1.png"),
-            (None, None, None),
-            (None, None, None),
-            (None, None, None),
+            ("Albania", "Albania", "Albania 1.png"),
+            ("Croton", "Croton", "Croton Ext 2.png"),
+            ("Aetolia","Aetolia", "aetolia.png"),
+            ("Persia", "Persia", "Persia Ext 1.png"),
             (None, None, None),
             (None, None, None)
-        ]
+        ]     
     ]
 
 screen gallery_buttons(data):
