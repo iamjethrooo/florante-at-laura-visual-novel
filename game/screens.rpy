@@ -1241,9 +1241,119 @@ screen about:
             label "[config.name!t]"
             text _("Version [config.version!t]\n")
 
+            ## Estangki
+            vbox:
+                text "{a=https://jethroestangki.me}Jethro Estangki{/a}":
+                    style_suffix "name"
+
+                vbox:
+                    style_suffix "category"
+                    text "Art"
+                vbox:
+                    style_suffix "bullets"
+                    text "• UI Design"
+
+                vbox:
+                    style_suffix "category"
+                    text "Programming\n"
+
+            ## Perez
+            vbox:
+                text "Iris Joe Perez":
+                    style_suffix "name"
+
+                vbox:
+                    style_suffix "category"
+                    text "Art"
+                vbox:
+                    style_suffix "bullets"
+                    text "• Background Art"
+
+                vbox:
+                    style_suffix "category"
+                    text "Sound Effects"
+
+                vbox:
+                    style_suffix "category"
+                    text "Story Revision\n"  
+
+            ## Bucasan
+            vbox:
+                text "Genesis Hope Bucasan":
+                    style_suffix "name"
+
+                vbox:
+                    style_suffix "category"
+                    text "Art"
+                vbox:
+                    style_suffix "bullets"
+                    text "• Character Art"
+                    text "• Character Design"
+                    text "• Icon Design"
+
+                vbox:
+                    style_suffix "category"
+                    text "Story Revision\n" 
+
+            ## Pangilinan
+            vbox:
+                text "Nikka Gwyn Pangilinan":
+                    style_suffix "name"
+
+                vbox:
+                    style_suffix "category"
+                    text "Art"
+                vbox:
+                    style_suffix "bullets"
+                    text "• Background Art"
+                    text "• Character Cards"
+
+                vbox:
+                    style_suffix "category"
+                    text "Story Revision\n"        
+
+            ## Panida
+            vbox:
+                text "Sajine Lei Panida":
+                    style_suffix "name"
+
+                vbox:
+                    style_suffix "category"
+                    text "Art"
+                vbox:
+                    style_suffix "bullets"
+                    text "• Background Art"
+                    text "• Main Menu Background\n"     
+
+            ## Serna
+            vbox:
+                text "Rennie Lyza Serna":
+                    style_suffix "name"
+                vbox:
+                    style_suffix "category"
+                    text "Art"
+                vbox:
+                    style_suffix "bullets"
+                    text "• Character Art\n"
+
+            ## Trinidad
+            vbox:
+                text "Lorena Marie Trinidad":
+                    style_suffix "name"
+
+                vbox:
+                    style_suffix "category"
+                    text "Art"
+                vbox:
+                    style_suffix "bullets"
+                    text "• Background Art"     
+      
+            text "\n"
+
+
             ## gui.about is usually set in options.rpy.
-            if gui.about:
-                text "[gui.about!t]\n"
+            #if gui.about:
+                #text "[gui.about!t]\n"
 
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
@@ -1253,3 +1363,12 @@ style about_text is gui_text
 
 style about_label_text:
     size gui.label_text_size
+
+style about_name:
+    color gui.accent_color
+
+style about_category:
+    xpos 0.2
+
+style about_bullets:
+    xpos 0.3
