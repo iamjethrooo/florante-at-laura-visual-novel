@@ -337,7 +337,7 @@ label ch03:
     show florante speaking at left
     florante "Ako’y ipinanganak sa pamilyang duke sa Albanya. Ama ko si Duke Briseo at ina ko si Prinsesa Floresca. Ngunit, kung ako’y ipinanganak sa pinagmulan ng aking ina, sa Krotona, mas maganda sana ang naging landas ng buhay ko."
 
-    florante "FLORANTE: Si Duke Briseo ang nag mistulang pangalawang pinuno ng Albanya dahil siya ang taga-payo ni Haring Linceo. Siya rin ang pinaka mabait, pinaka mapagmahal at ang pinaka.."
+    florante "Si Duke Briseo ang nag mistulang pangalawang pinuno ng Albanya dahil siya ang taga-payo ni Haring Linceo. Siya rin ang pinaka mabait, pinaka mapagmahal at ang pinaka.."
 
     menu:
         florante "Siya rin ang pinaka mabait, pinaka mapagmahal at ang pinaka.."
