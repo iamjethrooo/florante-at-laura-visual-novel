@@ -668,7 +668,7 @@ label ch07:
 
     t "Nakita ni Heneral Osmalik kung paano pinatay ni Florante ang pitong miyembro ng mga tropa ng Moro. Napatay naman ni Heneral Osmalik ang mga katropa ni Florante sa kaliwa’t kanan at nagkaroon ng hamunan sa kanilang pagitan."
 
-    heenral_osmalik "Halika..."
+    heneral_osmalik "Halika..."
 
     menu:
         heneral_osmalik "Halika..."

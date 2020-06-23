@@ -1,5 +1,5 @@
 ## Chapter Picker
-screen chapterpicker:
+screen chapterpicker():
     tag menu
 
     use game_menu(_("Chapter Picker")):
@@ -25,7 +25,7 @@ style chapterpicker_button_text:
     size 40
 
 ## Arc 1
-screen arc01:
+screen arc01():
     tag menu
 
     use game_menu(_("Ang Paghihinagpis sa Gubat"), scroll="viewport"):
@@ -39,7 +39,7 @@ screen arc01:
                 textbutton "Kabanata 2: At Lumitaw si Aladin" action If(persistent.ch02, Start("ch02"))
 
 ## Arc 2
-screen arc02:
+screen arc02():
     tag menu
 
     use game_menu(_("Ang Kwento ni Florante at Aladin"), scroll="viewport"):
@@ -65,7 +65,7 @@ screen arc02:
                 textbutton "Kabanata 10: Pinalayas na Prinsipe" action If(persistent.ch10, Start("ch10"))
 
 ## Arc 2
-screen arc03:
+screen arc03():
     tag menu
 
     use game_menu(_("Sa Pagbulog at Paglitaw ng Araw"), scroll="viewport"):

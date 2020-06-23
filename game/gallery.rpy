@@ -122,7 +122,7 @@ screen gallery_buttons(data):
             text ""
 
 # Step 3. The gallery screen we use.
-screen gallery:
+screen gallery():
     default page = 1
     # Ensure this replaces the main menu.
     tag menu

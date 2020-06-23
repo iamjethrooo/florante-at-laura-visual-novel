@@ -288,7 +288,7 @@ style quick_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
-screen main_menu:
+screen main_menu():
     tag menu
 
     add "images/castle.png"
@@ -1225,7 +1225,7 @@ style navigation_button_text:
     size 30
     properties gui.button_text_properties("navigation_button")
 
-screen about:
+screen about():
     tag menu
     use navigation
     add "gui/about.png"

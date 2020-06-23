@@ -10,6 +10,7 @@ define florante = Character("Florante", color="#FFFFFF")
 define aladin = Character("Aladin", color="#FFFFFF")
 define adolfo = Character("Adolfo", color="#FFFFFF")
 define duke_briseo = Character("Duke Briseo", color="#FFFFFF")
+define laura = Character("Laura", color="#FFFFFF")
 define haring_linceo = Character("Haring Linceo", color="#FFFFFF")
 define heneral_osmalik = Character("Heneral Osmalik", color="#FFFFFF")
 define count_adolfo = Character("Count Adolfo", color="#FFFFFF")
@@ -42,7 +43,7 @@ image adolfo speaking = character_thumb("characters/adolfo speaking.png")
 image adolfo speaking flip = character_thumb(im.Flip("characters/adolfo speaking.png", horizontal=True))
 
 ## Characters
-screen characters:
+screen characters():
     tag menu
 
     use game_menu(_("Characters")):
