@@ -1243,7 +1243,7 @@ screen about():
 
             ## Estangki
             vbox:
-                text "{a=https://jethroestangki.me}Jethro Estangki{/a}":
+                text "{a=https://iamjethrooo.github.io}Jethro Estangki{/a}":
                     style_suffix "name"
 
                 vbox:
@@ -1275,7 +1275,7 @@ screen about():
 
                 vbox:
                     style_suffix "category"
-                    text "Story Revision\n"  
+                    text "Story Revision\n"
 
             ## Bucasan
             vbox:
@@ -1293,7 +1293,7 @@ screen about():
 
                 vbox:
                     style_suffix "category"
-                    text "Story Revision\n" 
+                    text "Story Revision\n"
 
             ## Pangilinan
             vbox:
@@ -1310,7 +1310,7 @@ screen about():
 
                 vbox:
                     style_suffix "category"
-                    text "Story Revision\n"        
+                    text "Story Revision\n"
 
             ## Panida
             vbox:
@@ -1323,7 +1323,7 @@ screen about():
                 vbox:
                     style_suffix "bullets"
                     text "• Background Art"
-                    text "• Main Menu Background\n"     
+                    text "• Main Menu Background\n"
 
             ## Serna
             vbox:
@@ -1346,8 +1346,8 @@ screen about():
                     text "Art"
                 vbox:
                     style_suffix "bullets"
-                    text "• Background Art"     
-      
+                    text "• Background Art"
+
             text "\n"
 
 

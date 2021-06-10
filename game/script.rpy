@@ -37,31 +37,31 @@ label splashscreen:
 
 label start:
     play music "audio/forest.mp3"
-    call ch01
+    call ch01 from _call_ch01
 
-    call ch02
+    call ch02 from _call_ch02
 
-    call ch03
+    call ch03 from _call_ch03
 
-    call ch04
+    call ch04 from _call_ch04
 
-    call ch05
+    call ch05 from _call_ch05
 
-    call ch06
+    call ch06 from _call_ch06
 
-    call ch07
+    call ch07 from _call_ch07
 
-    call ch08
+    call ch08 from _call_ch08
 
-    call ch09
+    call ch09 from _call_ch09
 
-    call ch10
+    call ch10 from _call_ch10
 
-    call ch11
+    call ch11 from _call_ch11
 
-    call ch12
+    call ch12 from _call_ch12
 
-    call ch13
+    call ch13 from _call_ch13
 
     return
 
