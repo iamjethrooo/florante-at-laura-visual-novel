@@ -7,6 +7,11 @@ Florante at Laura is a visual novel that aims to gamify the learning experience 
 * [Sublime Text 3](https://www.sublimetext.com/3) - Text Editor
 
 ## Releases [![GitHub issues](https://img.shields.io/github/release/iamjethrooo/florante-at-laura-visual-novel)](https://github.com/iamjethrooo/florante-at-laura-visual-novel/releases) <br>
+v01.0 <br>
+- Final release (up to chapter 10)
+- Revamped UI
+- Art Gallery, Chapter Picker, and Character Cards
+
 v0.5-alpha <br>
 - Working prototype up to chapter 10
 - Added chapter selection screen
