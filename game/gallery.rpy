@@ -8,51 +8,51 @@ init python:
 
     # A button with an image that is always unlocked.
     g.button("Forest")
-    g.image("forest1.png")
-    g.image("Forest 2.png")
-    # Forest 2 Night
+    g.image("forest 1.png")
+    g.image("forest 2.png")
+    g.image("forest 2 night.png")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
     g.button("Higera")
-    g.image("Higera.png")
+    g.image("higera.png")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
     g.button("Aladin's Makeshift Home")
-    g.image("Aladin's Makeshift Home.png")
+    g.image("aladin makeshift home.png")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
     g.button("Flat Rock")
-    g.image("Flat Rock.png")
+    g.image("flat rock.png")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
     g.button("Mountains")
-    g.image("Mountains.png")
+    g.image("mountains.png")
     g.condition("True")
 
     # A button that contains an image that automatically unlocks.
     g.button("Athens")
-    g.image("Athens 1.png")
-    g.image("Athens 2.png")
-    g.image("Athens 3.png")
-    g.image("Athens Stage.png")
+    g.image("athens 1.png")
+    g.image("athens 2.png")
+    g.image("athens 3.png")
+    g.image("athens stage.png")
     g.condition("True")
 
     g.button("Albania")
-    g.image("Albania 1.png")
+    g.image("albania 1.png")
     g.image("albania int 1.png")
-    ## insert albania int 2
-    ## insert albania 2
-    # Albania 2 Night
+    g.image("albania int 2.png")
+    g.image("albania 2.png")
+    g.image("albania 2 night.png")
     g.condition("True")
 
     g.button("Croton")
-    ## Croton Ext 1
-    g.image("Croton Ext 2.png")
-    ## Croton Int 1
+    g.image("croton ext 1.png")
+    g.image("croton ext 2.png")
+    g.image("croton int 1.png")
     g.condition("True")
 
     g.button("Aetolia")
@@ -60,11 +60,11 @@ init python:
     g.condition("True")
 
     g.button("Persia")
-    g.image("Persia Ext 1.png")
-    g.image("Persia Ext 2.png")
-    # Persia Int 2
-    # Persia Int 1 Night
-    # Persia 1 Night
+    g.image("persia ext 1.png")
+    g.image("persia ext 2.png")
+    g.image("persia int 2.png")
+    g.image("persia int 1 night.png")
+    g.image("persia ext 1 night.png")
     g.condition("True")
 
 
@@ -91,18 +91,18 @@ init python:
 
     g_buttons_pages = [
         [
-            ("Forest", "Forest", "forest1.png"),
-            ("Higera", "Higera", "Higera.png"),
-            ("Aladin's Makeshift Home", "Aladin's Makeshift Home", "Aladin's Makeshift Home.png"),
-            ("Flat Rock", "Flat Rock", "Flat Rock.png"),
-            ("Mountains", "Mountains", "Mountains.png"),
-            ("Athens", "Athens", "Athens 1.png")
+            ("Forest", "Forest", "forest 1.png"),
+            ("Higera", "Higera", "higera.png"),
+            ("Aladin's Makeshift Home", "Aladin's Makeshift Home", "aladin makeshift home.png"),
+            ("Flat Rock", "Flat Rock", "flat rock.png"),
+            ("Mountains", "Mountains", "mountains.png"),
+            ("Athens", "Athens", "athens 1.png")
         ],
         [
-            ("Albania", "Albania", "Albania 1.png"),
-            ("Croton", "Croton", "Croton Ext 2.png"),
+            ("Albania", "Albania", "albania 1.png"),
+            ("Croton", "Croton", "croton Ext 2.png"),
             ("Aetolia","Aetolia", "aetolia.png"),
-            ("Persia", "Persia", "Persia Ext 1.png"),
+            ("Persia", "Persia", "persia ext 1.png"),
             (None, None, None),
             (None, None, None)
         ]     

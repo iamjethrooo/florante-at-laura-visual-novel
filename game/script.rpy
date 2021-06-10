@@ -14,23 +14,20 @@ transform transform_white:
         linear 2.0 alpha 0
         
 label splashscreen:
-    scene black
-    $ renpy.pause(1, hard=True)
-
     show white at transform_white
-    $ renpy.pause(2, hard=True)
+    $ renpy.pause(1, hard=True)
 
     show logo at transform_logo
     $ renpy.pause(4, hard=True)
 
     hide logo
-    $ renpy.pause(2, hard=True)
+    $ renpy.pause(1.5, hard=True)
 
     hide white
-    $ renpy.pause(3, hard=True)
+    $ renpy.pause(1.5, hard=True)
 
     scene black with dissolve
-    show text "Urban Dino presents..." with dissolve
+    show text "{size=35}Urban Dino presents...{/size}" with dissolve
     $ renpy.pause(2.5)
     hide text with fade
 
@@ -89,7 +86,7 @@ label ch01:
     t "Ang binata ay isang adonis. Makinis ang balat, pula ang pisngi at kulay ginto ang kanyang buhok ngunit, ang kanyang mga mata ay lumuluha."
 
     scene higera with fade
-    show florante at left
+    show florante speaking at left
     florante "O! Langit nasaan ang iyong bangis? Ang bandila ng kasamaan ay nagwawagayway sa kahariang Albanya."
 
     florante "Ikaw ang dahilan sa lahat! Sa korona ni Haring Linceo at ang kayamanan ng aking amang Duke."
@@ -115,7 +112,7 @@ label ch01:
 
     t "Ang kanyang pag-iisip ay nagugulo sa pagitan ng kamalayan at pagkahimatay."
 
-    show florante at left
+    show florante speaking at left
     florante "Laura! Hindi ba sinabi mo na hindi mo ako itataksil?"
 
     florante "Pinaniwalaan kita, nabulag ba ako sa iyong kagandahan?"
@@ -187,7 +184,7 @@ label ch02:
     hide text with dissolve
 
     scene forest 2 with fade
-
+    show aladin at left
     t "May isang kawal na dumating, Morong pananamit sa siyudad ng Persiya at ang kanyang turbante ay kalingas-lingas."
 
     t "Tumigil sa paglalakad at tumanaw, at kanyang binitawan ang sibat at kalasag. "
@@ -196,7 +193,7 @@ label ch02:
 
     t "Maya-maya siya’y umupo sa ilalim ng puno."
 
-    show aladin at left
+    show aladin speaking at left
     aladin "O palad!"
 
     aladin "Aking Flerida... Tuwa ko'y wakas na..."
@@ -204,7 +201,7 @@ label ch02:
     hide aladin
     t "Sa sobrang galit siya'y tumayo."
 
-    show aladin at left
+    show aladin speaking at left
     aladin "Taksil! Ama ko’y nagtaksil sa akin! Inagaw ang aking sinta, Flerida!"
 
     menu:
@@ -213,21 +210,23 @@ label ch02:
         "Tumahimik":
             aladin "..."
         "Sumigaw:":
-            aladin "AAAAAAAAAAAAAAAAAAhtdog"
+            aladin "AAAAAAAAAAAAAAAAAAHHH!!!"
 
-    show florante flip at right
+    show aladin at left
+    show florante speaking flip at right
     florante "Adiyos bunso't buhay mo'y lumipas!"
-
+    show florante flip at right
     aladin "?"
-
+    show florante speaking flip at right
     florante "Ama… naalala ko ang iyong madlang pag-irog at pagpapalayaw. Ikaw ang ama na sinuman walang makakadaig."
-    
+    show florante flip at right
     t "Sa puso ng taga-Persya ay naaawa sa mga naririnig."
-
+    show aladin speaking at left
     aladin "Ang aking ama na inagaw ang kasintahan sa akin, ay walang pagmamahal para sa akin. Ina na 'di ko nakilala, ay maagang namatay."
-
+    show aladin at left
+    show florante speaking flip at right
     florante "Paalam, Albanya!"
-
+    show florante flip at right
     t "Ito ang salita na umalingawngaw sa gubat."
 
     scene forest 1 with fade
@@ -252,12 +251,14 @@ label ch02:
 
     show florante speaking at left
     florante "Laura… Halina, mahal ko..."
-
-    t "Nagising ang binata sa kamay ng isang Moro."
     show florante at left
+    hide florante with fade
+    t "Nagising ang binata sa kamay ng isang Moro."
+
     show aladin speaking flip at right
     aladin "Ngayon ligtas ka na sa sakit."
 
+    show florante at left
     t "Nagulat si Florante at gumapang palayo kay Aladin. "
 
     aladin "Huwag kang matakot—"
@@ -286,33 +287,41 @@ label ch02:
     t "Tumayo ang Moro."
 
     show aladin speaking at left
+    show florante flip at right
     aladin "Mali ka! Wag mong itapon ang buhay mo ng ganto. Kinakailangan ka ng Albanya, kinakailangan ka ng mahal mo!"
 
     t "Tinitigan ni Florante si Aladin."
-
+    hide florante with dissolve
     t "Muling nahimatay si Florante."
 
-    scene aladin makeshift home with fade
+    scene aladins makeshift home with fade
 
+    show aladin speaking at left
     aladin "Ah! Gising ka na."
-
+    show aladin at left
     t "Mga ilang segundo ang kanyang mata’y naka titig sa langit."
-
+    show florante speaking flip at right
     florante "Ilang araw ang lumipas?"
-
+    show florante flip at right
+    show aladin speaking at left
     aladin "Lima? Anim siguro."
+    show aladin at left
+    show florante speaking flip at right
 
     florante "Salamat sa pag-aalaga saakin."
 
     scene flat rock with fade
-
+    show aladin speaking at left
     aladin "Walang anuman."
 
     aladin "Ako pala si Aladin."
 
     aladin "At ikaw?"
-
+    show aladin at left
+    show florante speaking flip at right
     florante "Florante."
+    show florante flip at right
+    show aladin speaking at left
 
     aladin "Tayong dalawa ay may sariling kwento at gusto kitang kilalanin. Sino ang mauuna?"
 
@@ -397,6 +406,7 @@ label ch04:
     $ renpy.pause(2)    
     hide text with dissolve
 
+    scene athens 1 with fade
     show florante speaking at left
     florante "Inutusan ako ng aking ama na umalis noong ako’y labing-isa pa lamang. Bungad daw ito ng kaniyang pagmamahal bilang ama."
 
@@ -409,12 +419,13 @@ label ch04:
     florante "Malungkot ang aking nadama sa aking pagdating. Halos isang buwan akong di nakakain ng maayos dala ng matinding kalungkutan."
 
     scene athens 2 with fade
+    show florante speaking at left
     florante "Ngunit nakilala ko ang aking mabait na guro na si Atenor at ang kaklase kong si Adolfo na labing-tatlong taong gulang."
-
+    show florante at left
     t "Si Adolfo ang pinaka matalino sa klase. Halos lahat ay tinitingalaan siya. Mabait, mahinahong at huwarang tao si Adolfo, ngunit maraming lihim sa puso."
 
     t "Turo ng ama ni Florante na ang talino ay kasama ng pagiging mapagkumbaba. Kaya pinagtataka ng klase kung bakit hindi niya nagugustuhan ang asal ni Adolfo."
-
+    show florante speaking at left
     florante "Hindi ko rin maintindihan sa sarili ko kung bakit ganun man ang aking nadama kay Adolfo."
 
     florante "Lumipas ang mga araw at pinag-aralan ko ang pilosopiya, astrolohiya, at matematika. Naging propesyonal ako sa tatlong paksa na iyon sa loob ng anim na taon."    
@@ -450,7 +461,7 @@ label ch05:
     florante "Gumanap akong bilang Eteocles, anak ni Oedipus. At si Adolfo ay gumanap bilang Polyneices. Ang isa ko pang kaklaseng si Menandro ay gumanap bilang ama nilang dalawa."
 
     florante "Bumigkas si Adolfo ng mga salitang wala sa sulat."
-
+    show adolfo flip at right
     menu: 
         florante "Bumigkas si Adolfo ng mga salitang wala sa sulat."
 
@@ -530,7 +541,7 @@ label ch06:
 
     florante "At hinahangaan ko."
     show florante at left
-
+    show aladin flip at right
     menu:
         florante "At hinahangaan ko."
 
@@ -727,7 +738,7 @@ label ch08:
     t "Nangibabaw ang galit sa kalooban ni Florante at kaniyang sinugod ang mga morong malapit sa babae. Tumakbo palayo ang mga moro."
 
     t "Inalis ni Florante ang takip mula sa mukha ng babae. Tumindig sa kaniya ay ang pamilyar na mukha ni Laura."
-
+    show laura at left
     menu:
         t "Inalis ni Florante ang takip mula sa mukha ng babae. Tumindig sa kaniya ay ang pamilyar na mukha ni Laura."
 
@@ -796,11 +807,13 @@ label ch09:
     florante "Dumating ang maraming digmaan, at sunod-sunod ang aking tagumpay. Nakuha ko ang respeto at galang ng mga labing-pitong hari."
 
     scene aetolia with fade
+    show florante speaking at left
     florante " Isang araw mula sa aking pagdidigimaan sa Etolia, nakatanggap ako ng liham mula kay Haring Linceo. Laman nito ang kautusang bumalik sa Albanya."
 
     florante "Ipinagbahala ko muna kay Menandro ang pagmamahala sa mga hukbo sa Etolia at dali-dali akong umalis."
 
     scene forest 2 night
+    show florante speaking at left
     florante "Gitna ng kadiliman nung ako’y pumasok sa Albanya. Payapa ang aking loob, wala akong naiisip na masama."
 
     scene albania 2 night
@@ -841,7 +854,7 @@ label ch09:
     florante "Sa aking pagkabilanggo ng labingwalong araw, nainip ako sa paghintay kay kamatayan. Kinagabihan, kinuha ako mula sa bilangguan at dinala sa gubat. Doon, ako’y tinali sa isang puno."
     hide florante
 
-    scene aladin makeshift home with fade
+    scene aladins makeshift home with fade
     show aladin speaking at left
     aladin "Ako’y nagmula sa Persiya at ako’y anak ni Sultan Ali-Adib."
 
@@ -866,7 +879,7 @@ label ch10:
     $ renpy.pause(2)    
     hide text with dissolve
 
-    scene aladin makeshift home with fade
+    scene aladins makeshift home with fade
     show aladin speaking at left
     aladin "Marami na akong naranasang giyera, ngunit ang aking lubos na pagkahirap ay nagmula kay Flerida."
 
